@@ -389,6 +389,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1260672856}
     m_Modifications:
+    - target: {fileID: 401028238913149392, guid: 343fad98fa2a3d346b1c1395462cc81b, type: 3}
+      propertyPath: _mainCamera
+      value: 
+      objectReference: {fileID: 867990741}
+    - target: {fileID: 401028238913149392, guid: 343fad98fa2a3d346b1c1395462cc81b, type: 3}
+      propertyPath: cinemachineAimCamera
+      value: 
+      objectReference: {fileID: 808012739}
+    - target: {fileID: 401028238913149392, guid: 343fad98fa2a3d346b1c1395462cc81b, type: 3}
+      propertyPath: CinemachineCameraTarget
+      value: 
+      objectReference: {fileID: 1034069065}
+    - target: {fileID: 401028238913149392, guid: 343fad98fa2a3d346b1c1395462cc81b, type: 3}
+      propertyPath: AimColliderLayerMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3559516222109115220, guid: 343fad98fa2a3d346b1c1395462cc81b, type: 3}
       propertyPath: m_Name
       value: Remy
@@ -445,6 +461,10 @@ PrefabInstance:
       propertyPath: aimCamera
       value: 
       objectReference: {fileID: 808012739}
+    - target: {fileID: 8276299088430072959, guid: 343fad98fa2a3d346b1c1395462cc81b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8276299088430072959, guid: 343fad98fa2a3d346b1c1395462cc81b, type: 3}
       propertyPath: _mainCamera
       value: 

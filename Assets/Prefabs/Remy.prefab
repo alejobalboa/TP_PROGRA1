@@ -1230,6 +1230,7 @@ GameObject:
   - component: {fileID: 7840218694528557972}
   - component: {fileID: 4441843310145226404}
   - component: {fileID: 4441843310145226405}
+  - component: {fileID: 401028238913149392}
   - component: {fileID: 8276299088430072959}
   m_Layer: 3
   m_Name: Remy
@@ -1311,7 +1312,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.71746063, y: 3.8018465, z: 0.646826}
   m_Center: {x: 0, y: 1.8247323, z: -0.011772469}
---- !u!114 &8276299088430072959
+--- !u!114 &401028238913149392
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1320,10 +1321,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 3559516222109115220}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2e2522c81fed04d920ad4520130e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7840218694528557972}
+  handPosition: {fileID: 0}
+  CinemachineCameraTarget: {fileID: 0}
+  cinemachineAimCamera: {fileID: 0}
+  AimColliderLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _mainCamera: {fileID: 0}
+--- !u!114 &8276299088430072959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3559516222109115220}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d8b71dcd6d828848b13dc1265c03577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimCamera: {fileID: 0}
+  animator: {fileID: 0}
+  handPosition: {fileID: 0}
+  CinemachineCameraTarget: {fileID: 0}
+  cinemachineAimCamera: {fileID: 0}
+  AimColliderLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _mainCamera: {fileID: 0}
 --- !u!1 &3648364746856202255
 GameObject:
   m_ObjectHideFlags: 0
