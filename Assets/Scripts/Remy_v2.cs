@@ -52,8 +52,8 @@ public class Remy_v2 : MonoBehaviour
 
         horizontal = UnityEngine.Input.GetAxisRaw("Horizontal");
         vertical = UnityEngine.Input.GetAxisRaw("Vertical");
-        mousex = UnityEngine.Input.GetAxis("Mouse X");
-        mousey = UnityEngine.Input.GetAxis("Mouse Y");
+        //mousex = UnityEngine.Input.GetAxis("Mouse X");
+        //mousey = UnityEngine.Input.GetAxis("Mouse Y");
 
         var direction = new Vector3(horizontal, 0, vertical).normalized;
 
