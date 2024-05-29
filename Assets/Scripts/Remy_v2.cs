@@ -11,6 +11,9 @@ public class Remy_v2 : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera cinemachineAimCamera;
     [SerializeField] private LayerMask AimColliderLayerMask;
     [SerializeField] private GameObject _mainCamera;
+    [SerializeField] private float health; //  Energia del jugador
+    [SerializeField] private float maxHealth; // maxima capacidad de energia del jugador
+   
 
     [SerializeField] private Weapon SelectedWeapon;
 
@@ -33,6 +36,9 @@ public class Remy_v2 : MonoBehaviour
     {
         //Establece el angulo y de la camara con respecto al target, en este caso la cabeza del personaje, con respecto al mundo
         cinemachineTargetX = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
+        health = maxHealth;
+        
+       
     }
 
     public void Update()
@@ -44,8 +50,8 @@ public class Remy_v2 : MonoBehaviour
 
         horizontal = UnityEngine.Input.GetAxisRaw("Horizontal");
         vertical = UnityEngine.Input.GetAxisRaw("Vertical");
-        mousex = UnityEngine.Input.GetAxis("Mouse X");
-        mousey = UnityEngine.Input.GetAxis("Mouse Y");
+        //mousex = UnityEngine.Input.GetAxis("Mouse X");
+        //mousey = UnityEngine.Input.GetAxis("Mouse Y");
 
         var direction = new Vector3(horizontal, 0, vertical).normalized;
 
@@ -132,4 +138,16 @@ public class Remy_v2 : MonoBehaviour
         if (lfAngle > 360f) lfAngle -= 360f;
         return Mathf.Clamp(lfAngle, lfMin, lfMax);
     }
+
+    public void TakeDamage(float damage) 
+    {
+       
+        health -= damage;
+        Debug.Log("Health:" + health) ;
+        if (health <= 0) 
+        {
+            health = 0;
+        }
+    }
+    
 }
