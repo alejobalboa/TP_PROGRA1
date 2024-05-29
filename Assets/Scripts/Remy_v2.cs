@@ -15,6 +15,8 @@ public class Remy_v2 : MonoBehaviour
     [SerializeField] private float maxHealth; // maxima capacidad de energia del jugador
    
 
+    [SerializeField] private Weapon SelectedWeapon;
+
     private float targetRotation = 0.0f;
     private float cinemachineTargetX;
     private float cinemachineTargetY;
@@ -30,9 +32,6 @@ public class Remy_v2 : MonoBehaviour
 
     private Vector3 mouseWorldPosition;
 
-
-
-
     public void Awake()
     {
         //Establece el angulo y de la camara con respecto al target, en este caso la cabeza del personaje, con respecto al mundo
@@ -41,7 +40,6 @@ public class Remy_v2 : MonoBehaviour
         
        
     }
-
 
     public void Update()
     {
@@ -52,8 +50,8 @@ public class Remy_v2 : MonoBehaviour
 
         horizontal = UnityEngine.Input.GetAxisRaw("Horizontal");
         vertical = UnityEngine.Input.GetAxisRaw("Vertical");
-        mousex = UnityEngine.Input.GetAxis("Mouse X");
-        mousey = UnityEngine.Input.GetAxis("Mouse Y");
+        //mousex = UnityEngine.Input.GetAxis("Mouse X");
+        //mousey = UnityEngine.Input.GetAxis("Mouse Y");
 
         var direction = new Vector3(horizontal, 0, vertical).normalized;
 
@@ -79,8 +77,6 @@ public class Remy_v2 : MonoBehaviour
             mouseWorldPosition = Camera.main.transform.position + Camera.main.transform.forward * 200f;
         }
 
-
-
         if (UnityEngine.Input.GetKey(KeyCode.Mouse1))
         {
             //Cuando presiono el click derecho, cambia de camara y sensibilidad (Para apuntar)
@@ -95,7 +91,6 @@ public class Remy_v2 : MonoBehaviour
             sensitivity = normalSensitivity;
         }
 
-
         if (horizontal != 0 || vertical != 0)
         {
             targetRotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _mainCamera.transform.eulerAngles.y;
@@ -105,6 +100,8 @@ public class Remy_v2 : MonoBehaviour
 
         //Por esto es que es necesario agregar la primera linea de código de esta funcion
         transform.position += targetDirection.normalized * (targetSpeed * Time.deltaTime);
+
+
     }
 
     private void LateUpdate()

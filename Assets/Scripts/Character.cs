@@ -13,13 +13,11 @@ public class Character : MonoBehaviour
         atras
     };
 
-
     [SerializeField] private SeleccionarDireccion selDir = SeleccionarDireccion.derecha;
     [SerializeField] private float Speed; //Velocidad de desplazamiento
     [SerializeField] private float Direccion; //Direccion de movimiento 
     [SerializeField] private float NewScale; //Tamaño del modelo
     // Start is called before the first frame update
-
 
     void Start()
     {
@@ -27,8 +25,6 @@ public class Character : MonoBehaviour
         NuevoTamanio = transform.localScale;
         NuevoTamanio += new Vector3(NewScale, NewScale, NewScale);
         transform.localScale = NuevoTamanio;
-
-        
     }
 
 

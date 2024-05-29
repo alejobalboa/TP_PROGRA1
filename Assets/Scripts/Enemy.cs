@@ -13,7 +13,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     [SerializeField] private Animator animator;
     [SerializeField] private float damage; // daño que se le provoca al player
-    
+    [SerializeField] private AudioSource zsfx;
+    [SerializeField] private AudioClip zWalk;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +47,7 @@ public class Enemy : MonoBehaviour
         transform.position += directionToPlayer * (Time.deltaTime * speed);
         
         animator.SetFloat("Zombie_Speed", distance);
+       
         LookAtPlayerOwnRotation();
     }
    
@@ -92,7 +94,7 @@ public class Enemy : MonoBehaviour
         {
 
             animator.SetFloat("Zombie_Speed", 0);
-
+            zsfx.PlayOneShot(zWalk);
 
         }
     }

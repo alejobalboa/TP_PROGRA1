@@ -31,14 +31,10 @@ public class Remy : MonoBehaviour
 
     private Vector3 mouseWorldPosition;
 
-    
-
-
     public void Awake()
     {
         _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
     }
-
 
     public void Update()
     {
