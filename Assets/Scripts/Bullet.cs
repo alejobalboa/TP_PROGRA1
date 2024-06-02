@@ -42,7 +42,6 @@ public class Bullet : MonoBehaviour
         lifeTime -= Time.deltaTime;
         if (lifeTime <= 0){Destroy(gameObject);}
 
-        Debug.Log(speed);
         transform.position += direction * (speed * Time.deltaTime);
     }
 
