@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System; //Solo lo importo para usar el try catch al cargar escenas.
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -30,10 +31,13 @@ public class GameManager : MonoBehaviour
 
     public void LoadLevel(string sceneToLoad)
     {
-        //Agregar despues cuando tengamos los niveles.
-        //SceneManager.LoadScene(sceneToLoad);
+        try
+        {
+            SceneManager.LoadScene(sceneToLoad);
+        }
+        catch (Exception e)
+        {
+            Debug.LogException(e);
+        }
     }
-
-
-
 }

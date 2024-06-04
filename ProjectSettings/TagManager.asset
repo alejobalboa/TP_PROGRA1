@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Puerta
+  - Enemy
+  - Collectible
+  - Camera
   layers:
   - Default
   - TransparentFX
@@ -14,7 +17,7 @@ TagManager:
   - UI
   - Collectible
   - Enemy
-  - 
+  - Cameras
   - 
   - 
   - 
