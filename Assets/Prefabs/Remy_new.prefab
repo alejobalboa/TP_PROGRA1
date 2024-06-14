@@ -1323,9 +1323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c740e415cc082c49b1c3b5c9806ceb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  CinemachineCameraTarget: {fileID: 0}
-  cinemachineAimCamera: {fileID: 0}
+  animator: {fileID: 7840218694528557972}
+  CinemachineCameraTarget: {fileID: 7043910593648110995}
   AimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 0
