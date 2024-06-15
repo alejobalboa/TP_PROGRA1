@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    SoundController soundController;
     //BOTONES
     [SerializeField] private Button BtnIniciarPartida;
     [SerializeField] private Button BtnOpciones;
@@ -18,8 +19,27 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject PantallaPrincipal;
     [SerializeField] private GameObject PantallaOpciones;
 
-    [SerializeField] private Slider VolumenSFX;
-    [SerializeField] private Slider VolumenBMG;
+    [SerializeField] private Slider VolumenGeneral;
+
+    //MUSICA MENU
+    [SerializeField] private AudioClip Musica;
+
+    bool EmpezoAReproducirMusica = false;
+
+    private void Start()
+    {
+        VolumenGeneral.value = PlayerPrefs.GetFloat("VolumenGeneral", 0.3f);
+        soundController = GetComponent<SoundController>();
+    }
+
+    private void Update()
+    {
+        if (!EmpezoAReproducirMusica)
+        {
+            EmpezoAReproducirMusica = true;
+            soundController.PlaySoundLoop(Musica);
+        }
+    }
 
     private void Awake()
     {
@@ -28,11 +48,11 @@ public class MainMenu : MonoBehaviour
         BtnVolverAlMenuPrincipal.onClick.AddListener(IrAMenuPrincipal);
         BtnSalir.onClick.AddListener(Salir);
 
-        VolumenBMG.onValueChanged.AddListener(SetVolumenBMG);
-        VolumenSFX.onValueChanged.AddListener(SetVolumenSFX);
+        VolumenGeneral.onValueChanged.AddListener(SetVolumen);
 
         IrAMenuPrincipal();
     }
+
     private void Jugar()
     {
         Debug.Log("hola"); 
@@ -56,16 +76,8 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    private void SetVolumenSFX(float NuevoVolumen)
+    private void SetVolumen(float NuevoVolumen)
     {
-        
+        PlayerPrefs.SetFloat("VolumenGeneral", NuevoVolumen);
     }
-
-    private void SetVolumenBMG(float NuevoVolumen)
-    {
-        
-    }
-
-
-
 }
