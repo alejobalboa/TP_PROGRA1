@@ -83,7 +83,7 @@ public class Remy_v2 : MonoBehaviour
         if (UnityEngine.Input.GetKey(KeyCode.Mouse1))
         {
             //Cuando presiono el click derecho, cambia de camara y sensibilidad (Para apuntar)
-            cinemachineAimCamera.gameObject.SetActive(true);
+            cinemachineAimCamera.gameObject.SetActive(true);  
             sensitivity = aimSensitivity;
 
         }

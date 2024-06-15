@@ -22,7 +22,10 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+
+        //playerObject = GameObject.FindWithTag("Player");
         playerObject = GameObject.FindWithTag("Player");
+        
                
     }
     void Start()
