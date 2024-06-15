@@ -3857,6 +3857,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7275679176502239492, guid: 7b61a66d076581d41bb96981b9bc9fbb, type: 3}
+      propertyPath: points.Array.data[0]
+      value: 
+      objectReference: {fileID: 582023798}
+    - target: {fileID: 7275679176502239492, guid: 7b61a66d076581d41bb96981b9bc9fbb, type: 3}
+      propertyPath: points.Array.data[1]
+      value: 
+      objectReference: {fileID: 174225147}
+    - target: {fileID: 7275679176502239492, guid: 7b61a66d076581d41bb96981b9bc9fbb, type: 3}
+      propertyPath: points.Array.data[2]
+      value: 
+      objectReference: {fileID: 1089396945}
+    - target: {fileID: 7275679176502239492, guid: 7b61a66d076581d41bb96981b9bc9fbb, type: 3}
+      propertyPath: points.Array.data[3]
+      value: 
+      objectReference: {fileID: 447168248}
     - target: {fileID: 7714552220971263522, guid: 7b61a66d076581d41bb96981b9bc9fbb, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -4701,6 +4717,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1615299409829350605, guid: aa5e4242839add447911dde3fe608d68, type: 3}
+      propertyPath: _mainCamera
+      value: 
+      objectReference: {fileID: 502215425}
     - target: {fileID: 6965558984343693612, guid: aa5e4242839add447911dde3fe608d68, type: 3}
       propertyPath: m_Name
       value: Remy_new
@@ -13581,7 +13601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502215425}
   m_LocalRotation: {x: 0, y: 0.9993237, z: 0, w: 0.036771107}
-  m_LocalPosition: {x: 19.693386, y: 1.66, z: 26.874168}
+  m_LocalPosition: {x: 19.693975, y: 1.7399999, z: 26.86619}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -52037,7 +52057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damping: {x: 0, y: 0, z: 0}
-  ShoulderOffset: {x: 0, y: 1.6, z: 0.17}
+  ShoulderOffset: {x: 0, y: 1.68, z: 0.178}
   VerticalArmLength: 0
   CameraSide: 1
   CameraDistance: 0
@@ -52616,7 +52636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1673495128}
   m_LocalRotation: {x: 0.07013444, y: -0.03699668, z: 0.0025951103, w: 0.9968479}
-  m_LocalPosition: {x: 19.693386, y: 1.66, z: 26.874168}
+  m_LocalPosition: {x: 19.693975, y: 1.7399999, z: 26.86619}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
