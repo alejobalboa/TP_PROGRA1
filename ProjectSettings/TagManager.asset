@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Collectible
   - Camera
+  - ComponentSuper
+  - Terrain
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Collectible
   - Enemy
   - Cameras
-  - 
+  - ElementSuper
   - 
   - 
   - 

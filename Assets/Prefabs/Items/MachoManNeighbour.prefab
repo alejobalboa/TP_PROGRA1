@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 5975943564708749272}
   - component: {fileID: 253402981688226433}
   - component: {fileID: 415118724}
+  - component: {fileID: 1150669664721842850}
   - component: {fileID: 415118725}
   m_Layer: 6
   m_Name: MachoManNeighbour
@@ -536,6 +537,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!136 &1150669664721842850
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100335688184930072}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2685586
+  m_Height: 2.0023293
+  m_Direction: 1
+  m_Center: {x: 0.000706911, y: 0.8061645, z: 0.044686258}
 --- !u!195 &415118725
 NavMeshAgent:
   m_ObjectHideFlags: 0
