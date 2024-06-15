@@ -7,7 +7,6 @@ public class Remy : MonoBehaviour
 {
    
     [SerializeField] private Animator animator;
-    //[SerializeField] private Transform handPosition;
     [SerializeField] private GameObject CinemachineCameraTarget;
     [SerializeField] private CinemachineVirtualCamera cinemachineAimCamera;
     [SerializeField] private LayerMask AimColliderLayerMask;
