@@ -10,19 +10,16 @@ public class Remy_New : MonoBehaviour
     [SerializeField] private LayerMask AimColliderLayerMask;
     [SerializeField] private GameObject _mainCamera;
 
-    private float rotationVelocity;
     private float targetRotation = 0.0f;
-    private bool rotateOnMove = true;
     private float cinemachineTargetYaw;
     private float cinemachineTargetPitch;
-    private float sensitivity = 1f;
+    private float sensitivity = 1.3f;
     private float TopClamp = 70.0f;
     private float BottomClamp = -30.0f;
     private float mousex;
     private float mousey;
     private float horizontal;
     private float vertical;
-    private float RotationSmoothTime = 0.12f;
 
     private Vector3 mouseWorldPosition;
 
@@ -47,10 +44,10 @@ public class Remy_New : MonoBehaviour
 
         if (horizontal != 0 || vertical != 0)
         {
-            RotateCharacter(direction);
+            MoveCharacter(targetSpeed, direction);
         }
 
-        MoveCharacter(targetSpeed);
+        
     }
 
     private void LateUpdate()
@@ -75,19 +72,9 @@ public class Remy_New : MonoBehaviour
         }
     }
 
-    private void RotateCharacter(Vector3 direction)
+    private void MoveCharacter(float targetSpeed, Vector3 direction)
     {
         targetRotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _mainCamera.transform.eulerAngles.y;
-        float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref rotationVelocity, RotationSmoothTime);
-
-        if (rotateOnMove)
-        {
-            transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
-        }
-    }
-
-    private void MoveCharacter(float targetSpeed)
-    {
         Vector3 targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
         transform.position += targetDirection.normalized * (targetSpeed * Time.deltaTime);
     }
@@ -104,13 +91,8 @@ public class Remy_New : MonoBehaviour
     {
         if (mousex != 0 || mousey != 0)
         {
-            rotateOnMove = false;
             cinemachineTargetYaw += mousex * sensitivity;
             cinemachineTargetPitch += mousey * sensitivity * (-1);
-        }
-        else
-        {
-            rotateOnMove = true;
         }
 
         cinemachineTargetYaw = ClampAngle(cinemachineTargetYaw, float.MinValue, float.MaxValue);
