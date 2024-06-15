@@ -2333,7 +2333,6 @@ GameObject:
   - component: {fileID: 7812561369617468636}
   - component: {fileID: 5895022628328941754}
   - component: {fileID: 1615299409829350605}
-  - component: {fileID: 5895022628328941759}
   - component: {fileID: 5895022628575573006}
   m_Layer: 3
   m_Name: Remy_new
@@ -2434,28 +2433,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   _mainCamera: {fileID: 0}
---- !u!195 &5895022628328941759
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6965558984343693612}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!136 &5895022628575573006
 CapsuleCollider:
   m_ObjectHideFlags: 0
