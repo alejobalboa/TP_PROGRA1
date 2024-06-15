@@ -5,7 +5,9 @@ using UnityEngine;
 public class CameraFP : MonoBehaviour
 {
     public Transform playerRef;
+    [SerializeField] Transform TorsoRef;
     [SerializeField]public float mouseSensitivity = 5f;
+
     float xRotation = 0f;
 
     // Start is called before the first frame update
@@ -26,5 +28,6 @@ public class CameraFP : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
         playerRef.Rotate(Vector3.up * mouseX);
+        TorsoRef.Rotate(Vector3.up * mouseX);
     }
 }

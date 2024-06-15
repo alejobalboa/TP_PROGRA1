@@ -713,6 +713,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1b31e24fac88754780584a906ca6981, type: 3}
+--- !u!4 &756747420 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3245748299086708225, guid: 343fad98fa2a3d346b1c1395462cc81b, type: 3}
+  m_PrefabInstance: {fileID: 980821295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &773108744
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,6 +804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRef: {fileID: 94313210}
+  TorsoRef: {fileID: 756747420}
   mouseSensitivity: 4
 --- !u!114 &773108748
 MonoBehaviour:
@@ -1164,6 +1170,10 @@ PrefabInstance:
     - target: {fileID: 4441843310145226404, guid: 343fad98fa2a3d346b1c1395462cc81b, type: 3}
       propertyPath: m_Mass
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7840218694528557972, guid: 343fad98fa2a3d346b1c1395462cc81b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8276299088430072959, guid: 343fad98fa2a3d346b1c1395462cc81b, type: 3}
       propertyPath: animator
