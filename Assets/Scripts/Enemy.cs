@@ -8,6 +8,13 @@ using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
+    SoundController soundController;
+    [SerializeField] private AudioClip SonidoGrunido;
+
+    //EJECUCIÓN ENTRE CADA SONIDO DEL ZOMBIE
+    [SerializeField] private float tiempoEntreGrunidos = 5f;
+    private float tiempoUltimoGrunido = 0f;
+
     [SerializeField] private float health = 250f;
     [SerializeField] private float Currenthealth;
     [SerializeField] private float damage;
@@ -45,6 +52,15 @@ public class Enemy : MonoBehaviour
     {
         Vector3 diff = player.transform.position - transform.position;
         distancePlayer = diff.magnitude;
+
+        //Reproduzco el grunido del zombie cada cieto tiempo.
+        tiempoUltimoGrunido += Time.deltaTime;
+        if (tiempoUltimoGrunido >= tiempoEntreGrunidos)
+        {
+            soundController.PlaySound(SonidoGrunido);
+            tiempoUltimoGrunido = 0;
+        }
+
 
         if (distancePlayer <= followRange && muerto == false)
         {

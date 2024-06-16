@@ -1194,6 +1194,7 @@ GameObject:
   - component: {fileID: 4822182215445762632}
   - component: {fileID: 5609524341831665777}
   - component: {fileID: 4822182215445762631}
+  - component: {fileID: 3254865335662438534}
   - component: {fileID: -9116184253679187442}
   - component: {fileID: 1270455443}
   m_Layer: 7
@@ -1282,9 +1283,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c32030341d0b0b4b80dc71bb53ea957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SonidoGrunido: {fileID: 8300000, guid: c35b1f489447c164f99deded2c2a9a6a, type: 3}
+  tiempoEntreGrunidos: 5
   health: 200
   Currenthealth: 200
   damage: 20
+--- !u!114 &3254865335662438534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5632522077406152603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a4aa4cfee0f215409065e81cfcac675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSourceOnce: {fileID: -9116184253679187442}
+  audioSourceLoop: {fileID: 0}
 --- !u!82 &-9116184253679187442
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1295,7 +1312,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c35b1f489447c164f99deded2c2a9a6a, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
