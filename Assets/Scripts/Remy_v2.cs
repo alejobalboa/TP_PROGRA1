@@ -13,7 +13,9 @@ public class Remy_v2 : MonoBehaviour
     [SerializeField] private GameObject _mainCamera;
     [SerializeField] private float health; //  Energia del jugador
     [SerializeField] private float maxHealth; // maxima capacidad de energia del jugador
-   
+                                              // public Transform playerPosition;
+    public Vector3 playerPosition;
+
 
     [SerializeField] private Weapon SelectedWeapon;
 
@@ -43,6 +45,7 @@ public class Remy_v2 : MonoBehaviour
 
     public void Update()
     {
+        playerPosition = transform.position;
         //Si no le cambio la speed, el personaje se sigue moviendo porque al final del código, se multiplica la dirección por la speed, por lo que siempre se va a estar moviendo,
         //no importa si estas apretando o no las flechitas. Ver mas abajo
         float targetSpeed = 5f;
@@ -80,7 +83,7 @@ public class Remy_v2 : MonoBehaviour
         if (UnityEngine.Input.GetKey(KeyCode.Mouse1))
         {
             //Cuando presiono el click derecho, cambia de camara y sensibilidad (Para apuntar)
-            cinemachineAimCamera.gameObject.SetActive(true);
+            cinemachineAimCamera.gameObject.SetActive(true);  
             sensitivity = aimSensitivity;
 
         }
