@@ -20,6 +20,7 @@ public class Remy_New : MonoBehaviour
     private float mousey;
     private float horizontal;
     private float vertical;
+    private float health = 100f;
 
     private Vector3 mouseWorldPosition;
 
@@ -106,5 +107,15 @@ public class Remy_New : MonoBehaviour
         if (angle < -360f) angle += 360f;
         if (angle > 360f) angle -= 360f;
         return Mathf.Clamp(angle, min, max);
+    }
+
+    public void TakeDamage(float damage)
+    {
+
+        health -= damage;
+        if (health <= 0)
+        {
+            health = 0;
+        }
     }
 }
