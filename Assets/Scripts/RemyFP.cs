@@ -8,7 +8,7 @@ public class RemyFP : MonoBehaviour
 {
 
     [SerializeField] CharacterController controller;
-    [SerializeField] float speed = 12f;
+    [SerializeField] float speed = 5f;
 
 
     [SerializeField] private float health; //  Energia del jugador
@@ -27,7 +27,8 @@ public class RemyFP : MonoBehaviour
 
         Vector3 move = transform.right * moveLR + transform.forward * moveFB;
 
-        controller.Move(move * speed *  Time.deltaTime);
+        //controller.Move(move * speed * Time.deltaTime);
+        transform.position += move * speed * Time.deltaTime;
     }
 
  

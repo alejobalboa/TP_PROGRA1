@@ -45,9 +45,7 @@ public class Remy_New : MonoBehaviour
         if (horizontal != 0 || vertical != 0)
         {
             MoveCharacter(targetSpeed, direction);
-        }
-
-        
+        }    
     }
 
     private void LateUpdate()
