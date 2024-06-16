@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour
 {
- //Audio
-    public AudioSource audioSourceOnce;
-    public AudioSource audioSourceLoop;
+    //Audio
+    [SerializeField] private AudioSource audioSourceOnce;
+    [SerializeField] private AudioSource audioSourceLoop;
  
     // Start is called before the first frame update
     void Start()

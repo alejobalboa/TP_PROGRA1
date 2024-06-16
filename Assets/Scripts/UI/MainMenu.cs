@@ -11,9 +11,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button BtnOpciones;
     [SerializeField] private Button BtnVolverAlMenuPrincipal;
     [SerializeField] private Button BtnSalir;
-    
-    [SerializeField] private Button ButtonPrefab;
-    [SerializeField] private RectTransform ContenedorBotones;
 
     //PANTALLAS
     [SerializeField] private GameObject PantallaPrincipal;
@@ -23,6 +20,7 @@ public class MainMenu : MonoBehaviour
 
     //MUSICA MENU
     [SerializeField] private AudioClip Musica;
+    [SerializeField] private AudioClip SonidoClick;
 
     bool EmpezoAReproducirMusica = false;
 
@@ -50,29 +48,34 @@ public class MainMenu : MonoBehaviour
 
         VolumenGeneral.onValueChanged.AddListener(SetVolumen);
 
-        IrAMenuPrincipal();
-    }
-
-    private void Jugar()
-    {
-        Debug.Log("hola"); 
-        GameManager.Instance.LoadLevel("Nivel1");
-    }
-
-    private void IrAMenuPrincipal()
-    {
+        //No invoco el metodo para que no reproduzca el efecto de sonido del click
         PantallaPrincipal.SetActive(true);
         PantallaOpciones.SetActive(false);
     }
 
+    private void Jugar()
+    {
+        soundController.PlaySound(SonidoClick);
+        GameManager.Instance.LoadLevel("Nivel1");
+    }
+
     private void IrAOpciones()
     {
+        soundController.PlaySound(SonidoClick);
         PantallaPrincipal.SetActive(false);
         PantallaOpciones.SetActive(true);
     }
 
+    private void IrAMenuPrincipal()
+    {
+        soundController.PlaySound(SonidoClick);
+        PantallaPrincipal.SetActive(true);
+        PantallaOpciones.SetActive(false);
+    }
+
     private void Salir()
     {
+        soundController.PlaySound(SonidoClick);
         Application.Quit();
     }
 
