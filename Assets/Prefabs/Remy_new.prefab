@@ -2333,7 +2333,6 @@ GameObject:
   - component: {fileID: 7812561369617468636}
   - component: {fileID: 5895022628328941754}
   - component: {fileID: 1615299409829350605}
-  - component: {fileID: 5895022628575573006}
   m_Layer: 3
   m_Name: Remy_new
   m_TagString: Player
@@ -2433,20 +2432,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   _mainCamera: {fileID: 0}
---- !u!136 &5895022628575573006
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6965558984343693612}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.8534238
-  m_Height: 4.0098686
-  m_Direction: 1
-  m_Center: {x: 0.030494453, y: 1.8252189, z: 0.32958496}
 --- !u!1 &7063233928968224008
 GameObject:
   m_ObjectHideFlags: 0
