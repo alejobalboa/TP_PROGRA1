@@ -18,12 +18,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] private AudioClip zWalk;
    
     private GameObject playerObject;
-
+    private Vector3 playerPosition;
+    
     // Start is called before the first frame update
     private void Awake()
     {
 
-        //playerObject = GameObject.FindWithTag("Player");
+        
         playerObject = GameObject.FindWithTag("Player");
         
                

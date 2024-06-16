@@ -1283,7 +1283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pursuitThreshold: 10
   fleeThreshold: 1
-  speed: 2
+  speed: 0.5
   rotationSpeed: 2
   zombieDamage: 4
   zombieEnergy: 100
