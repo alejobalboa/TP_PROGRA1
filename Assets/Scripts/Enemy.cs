@@ -8,6 +8,9 @@ using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private float health;
+    [SerializeField] private float damage;
+
     private Animator animator;
     private float followRange = 8f;
     private float stoppingDistance = 2f;
@@ -15,9 +18,7 @@ public class Enemy : MonoBehaviour
     private GameObject player;
     private Remy_New playerScript;
     private float distancePlayer;
-    private Vector3 directionPlayer;
     private float waitBetweenAttacks = 0f;
-    private float damage = 10;
     private int collectibleMask;
     private bool targetChosen;
     private int attackingTarget;
@@ -42,7 +43,6 @@ public class Enemy : MonoBehaviour
     {
         Vector3 diff = player.transform.position - transform.position;
         distancePlayer = diff.magnitude;
-        directionPlayer = diff.normalized;
 
         if (distancePlayer <= followRange)
         {
@@ -76,7 +76,6 @@ public class Enemy : MonoBehaviour
                         }
                         else
                         {
-                            animator.SetBool("Walk", false);
                             waitBetweenAttacks -= Time.deltaTime;
                         }
                     }
@@ -99,9 +98,9 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            animator.SetBool("Walk", false);
             agent.isStopped = true;
             agent.ResetPath();
+            animator.SetBool("Walk", false);
             targetChosen = false;
         }
 
@@ -119,8 +118,15 @@ public class Enemy : MonoBehaviour
         playerScript.TakeDamage(damage);
     }
 
-    public void ZombieTakeDamage(float demage)
+    public void ZombieTakeDamage(float takeDamage)
     {
-        Debug.Log("me estan pegando");
+        health -= takeDamage;
+        
+        if (health <= 0)
+        {
+            animator.SetTrigger("Die");
+            Destroy(gameObject, 5f);
+        }
+
     }
 }
