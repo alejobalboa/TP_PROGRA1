@@ -68,15 +68,4 @@ public class Bullet : MonoBehaviour
     {
         get { return damage; }
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Enemy zombie = collision.gameObject.GetComponent<Enemy>();
-        if (zombie != null) 
-        {
-            // cargar el daño de l abala hacia el zombie
-            zombie.ZombieTakeDamage(damage);
-        }
-    }
-
 }

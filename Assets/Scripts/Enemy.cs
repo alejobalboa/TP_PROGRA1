@@ -8,7 +8,8 @@ using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float health;
+    [SerializeField] private float health = 250f;
+    [SerializeField] private float Currenthealth;
     [SerializeField] private float damage;
 
     private Animator animator;
@@ -23,6 +24,7 @@ public class Enemy : MonoBehaviour
     private bool targetChosen;
     private int attackingTarget;
     Collider[] collectiblesInRange;
+    private bool muerto = false;
 
     private void Awake()
     {
@@ -44,7 +46,7 @@ public class Enemy : MonoBehaviour
         Vector3 diff = player.transform.position - transform.position;
         distancePlayer = diff.magnitude;
 
-        if (distancePlayer <= followRange)
+        if (distancePlayer <= followRange && muerto == false)
         {
             if (!targetChosen)
             {
@@ -60,7 +62,6 @@ public class Enemy : MonoBehaviour
                 }
             }
           
-
             switch (attackingTarget)
             {
                 case 0: //Ataca al jugador
@@ -100,7 +101,7 @@ public class Enemy : MonoBehaviour
         {
             agent.isStopped = true;
             agent.ResetPath();
-            animator.SetBool("Walk", false);
+            if (muerto == false) { animator.SetBool("Walk", false); }
             targetChosen = false;
         }
 
@@ -120,13 +121,26 @@ public class Enemy : MonoBehaviour
 
     public void ZombieTakeDamage(float takeDamage)
     {
-        health -= takeDamage;
+        Currenthealth -= takeDamage;
         
-        if (health <= 0)
+        if (Currenthealth <= 0)
         {
-            animator.SetTrigger("Die");
-            Destroy(gameObject, 5f);
+            if (muerto == false)
+            {
+                animator.SetTrigger("Die");
+                Destroy(gameObject, 5f);
+                muerto = true;
+            }
         }
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Bullet bala = collision.gameObject.GetComponent<Bullet>();
+        if (bala != null)
+        {
+            // cargar el daño de l abala hacia el zombie
+            ZombieTakeDamage(bala.Damage);
+        }
     }
 }
