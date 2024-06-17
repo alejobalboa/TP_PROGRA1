@@ -19,7 +19,6 @@ public class test : MonoBehaviour
     {
         if (!EmpezoAReproducirMusica)
         {
-            Debug.Log(PlayerPrefs.GetFloat("VolumenGeneral"));
             EmpezoAReproducirMusica = true;
             soundController.PlaySoundLoop(musica);
         }
