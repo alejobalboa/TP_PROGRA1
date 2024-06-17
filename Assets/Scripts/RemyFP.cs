@@ -3,21 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RemyFP : MonoBehaviour
 {
 
-    [SerializeField] CharacterController controller;
     [SerializeField] float speed = 5f;
-
-
     [SerializeField] private float health; //  Energia del jugador
     [SerializeField] private float maxHealth; // maxima capacidad de energia del jugador
     [SerializeField] private Weapon SelectedWeapon;
 
+    public UnityEvent OnDeathUnity;
+
     public void Awake()
     {
         health = maxHealth;   
+    }
+
+    private void Start()
+    {
+        GameManager.Instance.PlayerCreated(this);
     }
 
     public void Update()
@@ -27,7 +32,6 @@ public class RemyFP : MonoBehaviour
 
         Vector3 move = transform.right * moveLR + transform.forward * moveFB;
 
-        //controller.Move(move * speed * Time.deltaTime);
         transform.position += move * speed * Time.deltaTime;
     }
 
@@ -39,6 +43,7 @@ public class RemyFP : MonoBehaviour
         health -= damage;
         if (health <= 0) 
         {
+            OnDeathUnity?.Invoke();
             health = 0;
         }
     }

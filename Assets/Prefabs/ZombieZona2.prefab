@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 891185061141200690}
   - component: {fileID: 891185061141200691}
-  - component: {fileID: 1292743499596966720}
+  - component: {fileID: 2054320737994032091}
   m_Layer: 0
   m_Name: ZombieZona2
   m_TagString: Untagged
@@ -45,9 +45,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.8856993, y: 2.4687111, z: 1.8652589}
-  m_Center: {x: -0.52124166, y: 0.73435533, z: 1.0059413}
---- !u!114 &1292743499596966720
+  m_Size: {x: 2.5330582, y: 2.4687111, z: 1.8652589}
+  m_Center: {x: 0.5302105, y: 0.73435533, z: 1.0059413}
+--- !u!114 &2054320737994032091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,11 +56,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 891185061141200693}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fc16316ce0c7314f831b6a3feb14ffd, type: 3}
+  m_Script: {fileID: 11500000, guid: a9c1769ec764e13458e26a8e156e1a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5840831272991383996, guid: 925641f9d6f3400469a4b932d4fa8349, type: 3}
-  player: {fileID: 1615299409829350605, guid: aa5e4242839add447911dde3fe608d68, type: 3}
 --- !u!1 &891185061373204570
 GameObject:
   m_ObjectHideFlags: 0
