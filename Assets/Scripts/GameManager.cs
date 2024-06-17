@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System; //Solo lo importo para usar el try catch al cargar escenas.
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance => instance;
     private static GameManager instance;
 
-    private Remy remyInstance;
+    private RemyFP remyInstance;
+    private int collectiblesInScene=5;
+    private int collectiblesLost=0;
+    private int collectiblesSave=0;
 
     private void Awake()
     {
@@ -18,13 +22,34 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this);
         }
-        else //Instance != null
+        else
         {
             Destroy(gameObject);
         }
     }
+    public void destroyedCollectible()
+    {
+        collectiblesLost++;
+        checkCollectibles();
+    }
 
-    public Remy GetPlayerInstance()
+    public void savedCollectible()
+    {
+        collectiblesSave++;
+        checkCollectibles();
+    }
+
+    public void checkCollectibles()
+    {
+        if ((collectiblesLost + collectiblesSave) == collectiblesInScene)
+        {
+            //Termino el juego
+            //Se muestra pantalla de resultado
+        }
+        Debug.Log(collectiblesLost + collectiblesSave);
+    }
+
+    public RemyFP GetPlayerInstance()
     {
         return remyInstance;
     }
@@ -39,5 +64,29 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogException(e);
         }
+    }
+
+    public void LoadLevelAdditive(string sceneToLoad)
+    {
+        try
+        {
+            SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Additive);
+        }
+        catch (Exception e)
+        {
+            Debug.LogException(e);
+        }
+    }
+
+    public void PlayerCreated(RemyFP remy)
+    {
+        remyInstance = remy;
+        remyInstance.OnDeathUnity.AddListener(GameOver);
+        // player.OnDeath += DestroyAllCollectables;
+    }
+
+    public void GameOver()
+    {
+
     }
 }

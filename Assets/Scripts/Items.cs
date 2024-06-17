@@ -7,9 +7,15 @@ public class Items : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") || other.CompareTag("Enemy"))
+        var gameManager = GameManager.Instance;
+        if(other.CompareTag("Player"))
         {
-           Destroy(gameObject);
-        }    
+            gameManager.savedCollectible();
+        }
+        if (other.CompareTag("Enemy"))
+        {
+            gameManager.destroyedCollectible();
+        }
+        Destroy(gameObject);
     }
 }
