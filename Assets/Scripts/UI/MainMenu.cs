@@ -56,7 +56,7 @@ public class MainMenu : MonoBehaviour
     private void Jugar()
     {
         soundController.PlaySound(SonidoClick);
-        GameManager.Instance.LoadLevel("TestSuperMarket");
+        GameManager.Instance.LoadLevel("Level1SuperMarket");
     }
 
     private void IrAOpciones()

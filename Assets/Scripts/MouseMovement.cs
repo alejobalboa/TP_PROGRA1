@@ -6,6 +6,7 @@ public class MouseMovement : MonoBehaviour
 {
 
     [SerializeField] private float SensibilidadMouse = 10f;
+    [SerializeField] private GameObject Torso;
 
     private float xRotation = 0f;
     private float yRotation = 0f;
@@ -26,6 +27,7 @@ public class MouseMovement : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -80f, 80f);
         yRotation += mouseX;
 
-        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+        transform.localRotation = Quaternion.Euler(0f, yRotation, 0f);
+        Torso.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 }

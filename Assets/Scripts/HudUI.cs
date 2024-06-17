@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HubUI : MonoBehaviour
+public class HudUI : MonoBehaviour
 {
     [SerializeField] private Image lifeImage;
     [SerializeField] private GameObject neighbourTextObject; 

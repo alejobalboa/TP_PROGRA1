@@ -1269,7 +1269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sonidoGrunido: {fileID: 8300000, guid: 5cd921b91deac4f47b05c451951f7a53, type: 3}
   tiempoEntreGrunidos: 5
-  health: 250
+  health: 200
   damage: 20
 --- !u!114 &3254865335662438534
 MonoBehaviour:

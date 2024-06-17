@@ -1554,8 +1554,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.42147207, y: 2.1692393, z: 0.3736425}
-  m_Center: {x: -0.0018515587, y: 1.0062333, z: -0.027735084}
+  m_Size: {x: 0.53103274, y: 2.1692393, z: 0.3736425}
+  m_Center: {x: 0.00097379106, y: 1.0062338, z: -0.027735084}
 --- !u!82 &5840831272991383999
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1666,7 +1666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sonidoGrunido: {fileID: 8300000, guid: 24b617db03a924c4ab49c13feb18c10d, type: 3}
   tiempoEntreGrunidos: 5
-  health: 200
+  health: 150
   damage: 10
 --- !u!195 &4542659103487141007
 NavMeshAgent:
@@ -1743,7 +1743,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6776736033205141436}
-  m_LocalRotation: {x: -1.2858416e-13, y: 0.0000000046694932, z: -0.0000010266083, w: 1}
+  m_LocalRotation: {x: -1.06280804e-10, y: 0.000000004668284, z: -0.022734169, w: 0.9997416}
   m_LocalPosition: {x: 0.00000010258214, y: 1.0758694, z: -0.0029306465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1753,7 +1753,7 @@ Transform:
   - {fileID: 2214890849544541530}
   m_Father: {fileID: 6234235764500694621}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.605}
 --- !u!1 &6872673219906422979
 GameObject:
   m_ObjectHideFlags: 0

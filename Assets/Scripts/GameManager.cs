@@ -91,12 +91,12 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         remyInstance.OnDeathUnity.RemoveListener(GameOver);
-        LoadLevel("GameOver");
+        LoadLevel("PantallaDerrota");
     }
 
     public void EndGame()
     {
-        LoadLevel("EndGame");
+        LoadLevel("PantallaVictoria");
     }
 
     public int GetCollectiblesSave() { return collectiblesSave; }
