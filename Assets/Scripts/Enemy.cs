@@ -8,6 +8,13 @@ using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
+    SoundController soundController;
+    [SerializeField] private AudioClip sonidoGrunido;
+
+    //EJECUCIÓN ENTRE CADA SONIDO DEL ZOMBIE
+    [SerializeField] private float tiempoEntreGrunidos = 5f;
+    private float tiempoUltimoGrunido = 0f;
+
     [SerializeField] private float health = 250f;
     [SerializeField] private float Currenthealth;
     [SerializeField] private float damage;
@@ -17,7 +24,7 @@ public class Enemy : MonoBehaviour
     private float stoppingDistance = 2f;
     private NavMeshAgent agent;
     private GameObject player;
-    private Remy_New playerScript;
+    private RemyFP playerScript;
     private float distancePlayer;
     private float waitBetweenAttacks = 0f;
     private int collectibleMask;
@@ -31,11 +38,13 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         if (player != null)
         {
-            playerScript = player.GetComponent<Remy_New>();
+            playerScript = player.GetComponent<RemyFP>();
         }
     }
+
     private void Start()
     {
+        soundController = GetComponent<SoundController>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         collectibleMask = 1 << LayerMask.NameToLayer("Collectible");
@@ -45,6 +54,15 @@ public class Enemy : MonoBehaviour
     {
         Vector3 diff = player.transform.position - transform.position;
         distancePlayer = diff.magnitude;
+
+        //Reproduzco el grunido del zombie cada cieto tiempo.
+        tiempoUltimoGrunido += Time.deltaTime;
+        if (tiempoUltimoGrunido >= tiempoEntreGrunidos)
+        {
+            soundController.PlaySound(sonidoGrunido);
+            tiempoUltimoGrunido = 0;
+        }
+
 
         if (distancePlayer <= followRange && muerto == false)
         {
@@ -104,7 +122,6 @@ public class Enemy : MonoBehaviour
             if (muerto == false) { animator.SetBool("Walk", false); }
             targetChosen = false;
         }
-
     }
 
     private void GoToTarget(Vector3 targetPosition)

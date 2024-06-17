@@ -31,6 +31,8 @@ public class RemyFP : MonoBehaviour
         transform.position += move * speed * Time.deltaTime;
     }
 
+    public float GetHealth() {  return health; }
+    public float GetMaxHealth() {  return maxHealth; }
  
     public void TakeDamage(float damage) 
     {
