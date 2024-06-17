@@ -98,4 +98,8 @@ public class GameManager : MonoBehaviour
     {
         LoadLevel("EndGame");
     }
+
+    public int GetCollectiblesSave() { return collectiblesSave; }
+    public int GetCollectiblesLost() { return collectiblesLost; }
+    public int GetCollectiblesInScene() { return collectiblesInScene; }
 }
