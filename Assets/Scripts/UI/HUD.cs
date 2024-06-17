@@ -9,35 +9,32 @@ public class HUD : MonoBehaviour
     [SerializeField] private Image healthBar;
     [SerializeField] private Image rescueBar;
     [SerializeField] private Image rescueBarLost;
-    
-   
+    private RemyFP remyInstance;
+
     //private Items itemCount;
-   
+
     RemyFP player;
-    
+
     private float maxHealth;
     private float currentHealth;
-    
-    
+
+
     // Start is called before the first frame update
     private void Awake()
     {
-        
-        
-       
+
+
+
     }
     void Start()
     {
         //canvas = GameObject.Find("Canvas").GetComponent<Canvas>(); //Aca voy a buscar el canvas
         //healthBar = canvas.GetComponentInChildren<Image>(); // Obetener los componentes image
-        
-        
-        RemyFP player = GetComponent<RemyFP>();
-        if (player != null)
-        {
-            maxHealth = player.GetMaxHealth();
-        }
-        
+
+        remyInstance = GameManager.Instance.GetPlayerInstance();
+        maxHealth = remyInstance.GetMaxHealth();
+
+
     }
 
     void Update()
@@ -47,26 +44,20 @@ public class HUD : MonoBehaviour
         RescueBarLost();
     }
 
-    private void HealthBar() 
-    { 
-        RemyFP player = GetComponent<RemyFP>(); 
-        if (player != null) 
-        {
-            currentHealth = player.GetHealth();
-            healthBar.fillAmount = (currentHealth * 1 )/ maxHealth;
-           
-            
-        }
+    private void HealthBar()
+    {
+        currentHealth = remyInstance.GetHealth();
+        healthBar.fillAmount = currentHealth / maxHealth;
     }
     private void RescueBar()
     {
-   
+
         rescueBar.fillAmount = (GameManager.Instance.GetCollectiblesSave() * 1f) / GameManager.Instance.GetCollectiblesInScene();
     }
     private void RescueBarLost()
     {
-       
-        rescueBarLost.fillAmount =( GameManager.Instance.GetCollectiblesLost() * 1f) / GameManager.Instance.GetCollectiblesInScene();
+
+        rescueBarLost.fillAmount = (GameManager.Instance.GetCollectiblesLost() * 1f) / GameManager.Instance.GetCollectiblesInScene();
     }
 
     //private void EnemyCounter() 

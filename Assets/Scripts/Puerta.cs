@@ -6,6 +6,7 @@ public class Puerta : MonoBehaviour
 {
     public float distanciaInteraccion;
     public GameObject textoInteraccion;
+    public GameObject textoInteraccion2;
     public string animacionPuertaAbierta, animacionPuertaCerrada;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class Puerta : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("hola");
+       
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
@@ -27,6 +28,7 @@ public class Puerta : MonoBehaviour
                 GameObject doorParent = hit.collider.transform.root.gameObject;
                 Animator animacionPuerta = doorParent.GetComponent<Animator>();
                 textoInteraccion.SetActive(true);
+                textoInteraccion2.SetActive(true);
                 if(Input.GetKeyDown(KeyCode.E))
                 {
                     
@@ -45,6 +47,7 @@ public class Puerta : MonoBehaviour
             else 
             {
                 textoInteraccion.SetActive(false);  
+                textoInteraccion2.SetActive(false);  
             }
         }
     }

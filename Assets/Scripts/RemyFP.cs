@@ -24,7 +24,7 @@ public class RemyFP : MonoBehaviour
     {
         GameManager.Instance.PlayerCreated(this);
         var gameManager = GameManager.Instance;
-        gameManager.LoadLevelAdditive("Remy_UI");
+        //gameManager.LoadLevelAdditive("Remy_UI");
     }
 
     public void Update()

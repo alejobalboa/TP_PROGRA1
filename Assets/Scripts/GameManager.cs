@@ -45,7 +45,9 @@ public class GameManager : MonoBehaviour
         if (collectiblesLost >= collectiblesInScene)
         {
             GameOver();
-        } else {
+        } 
+        else 
+        {
             if ((collectiblesLost + collectiblesSave) == collectiblesInScene)
             {
                 EndGame();
@@ -91,11 +93,13 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         remyInstance.OnDeathUnity.RemoveListener(GameOver);
+        Cursor.lockState = CursorLockMode.None;
         LoadLevel("PantallaDerrota");
     }
 
     public void EndGame()
     {
+        Cursor.lockState = CursorLockMode.None;
         LoadLevel("PantallaVictoria");
     }
 

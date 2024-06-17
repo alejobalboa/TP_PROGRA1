@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class test : MonoBehaviour
+public class SonidoAmbiente : MonoBehaviour
 {
     SoundController soundController;
     [SerializeField] private AudioClip musica;

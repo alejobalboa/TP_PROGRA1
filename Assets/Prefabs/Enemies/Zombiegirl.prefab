@@ -1554,8 +1554,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.53103274, y: 2.1692393, z: 0.3736425}
-  m_Center: {x: 0.00097379106, y: 1.0062338, z: -0.027735084}
+  m_Size: {x: 0.62329024, y: 2.1692393, z: 0.61240447}
+  m_Center: {x: 0.018116983, y: 1.0062338, z: 0.0916459}
 --- !u!82 &5840831272991383999
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1677,7 +1677,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6759802749567229159}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.28
   m_Speed: 1.3
   m_Acceleration: 8
   avoidancePriority: 50
