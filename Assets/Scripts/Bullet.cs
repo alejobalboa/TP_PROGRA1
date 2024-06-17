@@ -20,17 +20,17 @@ public class Bullet : MonoBehaviour
         {
             case TipoMunicion.NM:
                 speed = 20f;//Propiedades de la bala hardcodeadas.
-                lifeTime = 5f;//Propiedades de la bala hardcodeadas.
+                lifeTime = 3f;//Propiedades de la bala hardcodeadas.
                 damage = 50f;//Propiedades de la bala hardcodeadas.
                 break;
             case TipoMunicion.FFS:
                 speed = 100f;//Propiedades de la bala hardcodeadas.
-                lifeTime = 5f;//Propiedades de la bala hardcodeadas.
+                lifeTime = 3f;//Propiedades de la bala hardcodeadas.
                 damage = 70f;//Propiedades de la bala hardcodeadas.
                 break;
             case TipoMunicion.AKFS:
                 speed = 75f;//Propiedades de la bala hardcodeadas.
-                lifeTime = 5f;//Propiedades de la bala hardcodeadas.
+                lifeTime = 3f;//Propiedades de la bala hardcodeadas.
                 damage = 80f;//Propiedades de la bala hardcodeadas.
                 break;
             default:
@@ -67,5 +67,15 @@ public class Bullet : MonoBehaviour
     public float Damage
     {
         get { return damage; }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Enemy enemy = other.gameObject.GetComponent<Enemy>(); 
+            enemy.ZombieTakeDamage(damage);
+        }
+        Destroy(gameObject);
     }
 }

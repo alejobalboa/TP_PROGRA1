@@ -17,12 +17,14 @@ public class RemyFP : MonoBehaviour
 
     public void Awake()
     {
-        health = maxHealth;   
+        health = maxHealth;
     }
 
     private void Start()
     {
         GameManager.Instance.PlayerCreated(this);
+        var gameManager = GameManager.Instance;
+        gameManager.LoadLevelAdditive("Remy_UI");
     }
 
     public void Update()

@@ -12,6 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Nivel1.unity
     guid: f274f134d7ad5204a91c2f21526214c6
   - enabled: 1
-    path: Assets/Scenes/TestSuperMarket.unity
+    path: Assets/Scenes/Level1SuperMarket.unity
     guid: 6813d9525c9c3fc4397c7da955f17bad
+  - enabled: 1
+    path: Assets/Scenes/Remy_UI.unity
+    guid: 925271706b815a9469e199bbbb3cef90
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: d4d5902093b795a47a0b4bce796ad292
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: d7fce4615c5975c40a0e41592fe72b82
   m_configObjects: {}

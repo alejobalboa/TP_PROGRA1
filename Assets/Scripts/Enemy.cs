@@ -15,8 +15,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float tiempoEntreGrunidos = 5f;
     private float tiempoUltimoGrunido = 0f;
 
-    [SerializeField] private float health = 250f;
-    [SerializeField] private float Currenthealth;
+    [SerializeField] private float health;
     [SerializeField] private float damage;
 
     private Animator animator;
@@ -32,18 +31,11 @@ public class Enemy : MonoBehaviour
     private int attackingTarget;
     Collider[] collectiblesInRange;
     private bool muerto = false;
-
-    private void Awake()
-    {
-        player = GameObject.FindWithTag("Player");
-        if (player != null)
-        {
-            playerScript = player.GetComponent<RemyFP>();
-        }
-    }
+    private Vector3 colletiblePosition;
 
     private void Start()
     {
+        playerScript = GameManager.Instance.GetPlayerInstance();
         soundController = GetComponent<SoundController>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -52,7 +44,12 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        Vector3 diff = player.transform.position - transform.position;
+        if(playerScript == null)
+        {
+            playerScript = GameManager.Instance.GetPlayerInstance();
+        }
+
+        Vector3 diff = playerScript.transform.position - transform.position;
         distancePlayer = diff.magnitude;
 
         //Reproduzco el grunido del zombie cada cieto tiempo.
@@ -101,13 +98,19 @@ public class Enemy : MonoBehaviour
                     else
                     {
                         agent.isStopped = false;
-                        GoToTarget(player.transform.position);
+                        GoToTarget(playerScript.transform.position);
                     }
                     break;
                 case 1: //Ataca al primer coleccionable del array
-                    
-                    GoToTarget(collectiblesInRange[0].gameObject.transform.position);
-                    if(transform.position == collectiblesInRange[0].gameObject.transform.position)
+                    if (collectiblesInRange[0] != null)
+                    {
+                        colletiblePosition = collectiblesInRange[0].gameObject.transform.position;
+                    } else
+                    {
+                        colletiblePosition = transform.position;
+                    }
+                    GoToTarget(colletiblePosition);
+                    if(transform.position == colletiblePosition)
                     {
                         targetChosen = false;
                     }
@@ -138,26 +141,29 @@ public class Enemy : MonoBehaviour
 
     public void ZombieTakeDamage(float takeDamage)
     {
-        Currenthealth -= takeDamage;
+        health -= takeDamage;
         
-        if (Currenthealth <= 0)
+        if (health <= 0)
         {
             if (muerto == false)
             {
+                animator.SetBool("IsDead",true);
                 animator.SetTrigger("Die");
                 Destroy(gameObject, 5f);
+                agent.isStopped = true;
+                agent.ResetPath();
                 muerto = true;
             }
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Bullet bala = collision.gameObject.GetComponent<Bullet>();
-        if (bala != null)
-        {
-            // cargar el daño de l abala hacia el zombie
-            ZombieTakeDamage(bala.Damage);
-        }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    Bullet bala = collision.gameObject.GetComponent<Bullet>();
+    //    if (bala != null)
+    //    {
+    //        // cargar el daño de l abala hacia el zombie
+    //        ZombieTakeDamage(bala.Damage);
+    //    }
+    //}
 }

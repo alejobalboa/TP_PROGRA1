@@ -90,17 +90,12 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        //TODO: Cargar escena de game over
         remyInstance.OnDeathUnity.RemoveListener(GameOver);
-        //LoadLevel("GameOver");
-        Debug.Log("Perdiste");
+        LoadLevel("GameOver");
     }
 
     public void EndGame()
     {
-        //TODO: Cargar escena de resultado
-        //LoadLevel("EndGame");
-        Debug.Log(collectiblesSave);
-        Debug.Log(collectiblesLost);
+        LoadLevel("EndGame");
     }
 }
