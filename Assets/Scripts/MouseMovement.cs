@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MouseMovement : MonoBehaviour
 {
-
     [SerializeField] private float SensibilidadMouse = 10f;
     [SerializeField] private GameObject Torso;
 
@@ -15,6 +14,8 @@ public class MouseMovement : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+
 
     // Update is called once per frame
     void Update()
