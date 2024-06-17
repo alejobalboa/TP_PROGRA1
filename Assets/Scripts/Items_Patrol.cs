@@ -9,7 +9,7 @@ public class Items_Patrol : MonoBehaviour
     private int destinationPoint = 0;
     private NavMeshAgent agent;
 
-    void Start()
+    private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         GoToNextPoint();
@@ -27,7 +27,7 @@ public class Items_Patrol : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if(!agent.pathPending && agent.remainingDistance < 0.5f)
         {

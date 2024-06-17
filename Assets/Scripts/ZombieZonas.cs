@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZombieZona2 : MonoBehaviour
+public class ZombieZonas : MonoBehaviour
 {
     [SerializeField] private Enemy enemyPrefab; // que vamos a spawnear
 
@@ -15,12 +15,12 @@ public class ZombieZona2 : MonoBehaviour
         remyInstance = GameManager.Instance.GetPlayerInstance();
         spawnPosition = transform.position + Random.insideUnitSphere * spawnRadio; // Genera una posicion aleatorea basada en el player
 
-        if (remyInstance != null) 
+        if (remyInstance != null)
         {
             Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
         }
 
 
-        
+
     }
 }

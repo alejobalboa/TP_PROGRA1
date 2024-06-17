@@ -4,6 +4,7 @@ using System; //Solo lo importo para usar el try catch al cargar escenas.
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using UnityEditor.PackageManager;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,12 +42,15 @@ public class GameManager : MonoBehaviour
 
     public void checkCollectibles()
     {
-        if ((collectiblesLost + collectiblesSave) == collectiblesInScene)
+        if (collectiblesLost >= collectiblesInScene)
         {
-            //Termino el juego
-            //Se muestra pantalla de resultado
-        }
-        Debug.Log(collectiblesLost + collectiblesSave);
+            GameOver();
+        } else {
+            if ((collectiblesLost + collectiblesSave) == collectiblesInScene)
+            {
+                EndGame();
+            }
+        }  
     }
 
     public RemyFP GetPlayerInstance()
@@ -82,11 +86,21 @@ public class GameManager : MonoBehaviour
     {
         remyInstance = remy;
         remyInstance.OnDeathUnity.AddListener(GameOver);
-        // player.OnDeath += DestroyAllCollectables;
     }
 
     public void GameOver()
     {
+        //TODO: Cargar escena de game over
+        remyInstance.OnDeathUnity.RemoveListener(GameOver);
+        //LoadLevel("GameOver");
+        Debug.Log("Perdiste");
+    }
 
+    public void EndGame()
+    {
+        //TODO: Cargar escena de resultado
+        //LoadLevel("EndGame");
+        Debug.Log(collectiblesSave);
+        Debug.Log(collectiblesLost);
     }
 }
