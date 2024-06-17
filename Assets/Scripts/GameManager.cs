@@ -103,4 +103,8 @@ public class GameManager : MonoBehaviour
         Debug.Log(collectiblesSave);
         Debug.Log(collectiblesLost);
     }
+
+    public int GetCollectiblesSave() { return collectiblesSave; }
+    public int GetCollectiblesLost() { return collectiblesLost; }
+    public int GetCollectiblesInScene() { return collectiblesInScene; }
 }
