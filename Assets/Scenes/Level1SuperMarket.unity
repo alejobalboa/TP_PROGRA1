@@ -70878,6 +70878,159 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce40197b2b04d564caecb7fa9b512922, type: 3}
+<<<<<<< Updated upstream:Assets/Scenes/Level1SuperMarket.unity
+=======
+--- !u!1001 &1292743501008822601
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 891185061141200690, guid: 303d710e9c4faf646ae26c4bc94cd144, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 891185061141200690, guid: 303d710e9c4faf646ae26c4bc94cd144, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 891185061141200690, guid: 303d710e9c4faf646ae26c4bc94cd144, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 891185061141200690, guid: 303d710e9c4faf646ae26c4bc94cd144, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 891185061141200690, guid: 303d710e9c4faf646ae26c4bc94cd144, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 891185061141200690, guid: 303d710e9c4faf646ae26c4bc94cd144, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 891185061141200690, guid: 303d710e9c4faf646ae26c4bc94cd144, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 891185061141200690, guid: 303d710e9c4faf646ae26c4bc94cd144, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 891185061141200690, guid: 303d710e9c4faf646ae26c4bc94cd144, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 891185061141200690, guid: 303d710e9c4faf646ae26c4bc94cd144, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 891185061141200690, guid: 303d710e9c4faf646ae26c4bc94cd144, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 891185061141200691, guid: 303d710e9c4faf646ae26c4bc94cd144, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5330582
+      objectReference: {fileID: 0}
+    - target: {fileID: 891185061141200691, guid: 303d710e9c4faf646ae26c4bc94cd144, type: 3}
+      propertyPath: m_Center.x
+      value: 0.5302105
+      objectReference: {fileID: 0}
+    - target: {fileID: 891185061141200693, guid: 303d710e9c4faf646ae26c4bc94cd144, type: 3}
+      propertyPath: m_Name
+      value: ZombieZona2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 303d710e9c4faf646ae26c4bc94cd144, type: 3}
+--- !u!1001 &3202396872705850204
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2138822014347628786, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628787, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_Name
+      value: ZombieZona1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628788, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628788, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628788, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628788, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628788, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628788, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628788, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628788, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628788, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628788, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628788, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628789, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_Size.x
+      value: 4.900893
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628789, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_Size.y
+      value: 3.0537944
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628789, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_Center.x
+      value: -0.6935506
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014347628789, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_Center.y
+      value: 1.0268972
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014579095441, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138822014579095441, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8823479813219844888, guid: 13d3787489cb4db4aaca0b9cc7205050, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b310d4ae9ee71ca499ebcfaae087ebc5, type: 3}
+>>>>>>> Stashed changes:Assets/Scenes/TestSuperMarket.unity
 --- !u!1001 &6602116138701788555
 PrefabInstance:
   m_ObjectHideFlags: 0
