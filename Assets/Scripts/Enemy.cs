@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 public class Enemy : MonoBehaviour
 {
     SoundController soundController;
-    [SerializeField] private AudioClip SonidoGrunido;
+    [SerializeField] private AudioClip sonidoGrunido;
 
     //EJECUCIÓN ENTRE CADA SONIDO DEL ZOMBIE
     [SerializeField] private float tiempoEntreGrunidos = 5f;
@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
     private float stoppingDistance = 2f;
     private NavMeshAgent agent;
     private GameObject player;
-    private Remy_New playerScript;
+    private RemyFP playerScript;
     private float distancePlayer;
     private float waitBetweenAttacks = 0f;
     private int collectibleMask;
@@ -38,11 +38,13 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         if (player != null)
         {
-            playerScript = player.GetComponent<Remy_New>();
+            playerScript = player.GetComponent<RemyFP>();
         }
     }
+
     private void Start()
     {
+        soundController = GetComponent<SoundController>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         collectibleMask = 1 << LayerMask.NameToLayer("Collectible");
@@ -57,7 +59,7 @@ public class Enemy : MonoBehaviour
         tiempoUltimoGrunido += Time.deltaTime;
         if (tiempoUltimoGrunido >= tiempoEntreGrunidos)
         {
-            soundController.PlaySound(SonidoGrunido);
+            soundController.PlaySound(sonidoGrunido);
             tiempoUltimoGrunido = 0;
         }
 
@@ -120,7 +122,6 @@ public class Enemy : MonoBehaviour
             if (muerto == false) { animator.SetBool("Walk", false); }
             targetChosen = false;
         }
-
     }
 
     private void GoToTarget(Vector3 targetPosition)

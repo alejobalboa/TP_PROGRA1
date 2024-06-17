@@ -5,7 +5,7 @@ using static Character;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private SoundController soundController;
+    private SoundController soundController;
 
     [SerializeField] Bullet prefabMunicion;
     [SerializeField] private float bulletDelay = 0.5f;
@@ -15,8 +15,13 @@ public class Weapon : MonoBehaviour
 
     private float currentBulletDelay;
 
+    private void Start()
+    {
+        soundController = GetComponent<SoundController>();
+    }
     private void Shoot()
     {
+
         soundController.PlaySound(Disparo);
         currentBulletDelay = 0;
         Bullet bullet = Instantiate(prefabMunicion, shootingPoint.position, shootingPoint.rotation);

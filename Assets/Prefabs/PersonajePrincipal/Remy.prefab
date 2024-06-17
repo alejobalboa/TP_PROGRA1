@@ -656,7 +656,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9056092296528308101}
-  - {fileID: 7276869490141735906}
   m_Father: {fileID: 3989527310308116296}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 3.042, y: 4.707, z: 33.871}
@@ -3158,65 +3157,3 @@ Transform:
   m_Father: {fileID: 9056092296528308101}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 34.979, y: -15.094, z: -12.909}
---- !u!1001 &609063541605847030
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5155286583082167781}
-    m_Modifications:
-    - target: {fileID: 7822601023205696532, guid: 28fde303f1f49e14fa00f67ac7a1a06e, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822601023205696532, guid: 28fde303f1f49e14fa00f67ac7a1a06e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822601023205696532, guid: 28fde303f1f49e14fa00f67ac7a1a06e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.719
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822601023205696532, guid: 28fde303f1f49e14fa00f67ac7a1a06e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822601023205696532, guid: 28fde303f1f49e14fa00f67ac7a1a06e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.6043543
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822601023205696532, guid: 28fde303f1f49e14fa00f67ac7a1a06e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.44966862
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822601023205696532, guid: 28fde303f1f49e14fa00f67ac7a1a06e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.48944792
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822601023205696532, guid: 28fde303f1f49e14fa00f67ac7a1a06e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.4393117
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822601023205696532, guid: 28fde303f1f49e14fa00f67ac7a1a06e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 76.795
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822601023205696532, guid: 28fde303f1f49e14fa00f67ac7a1a06e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 300.657
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822601023205696532, guid: 28fde303f1f49e14fa00f67ac7a1a06e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 23.427
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822601023206193204, guid: 28fde303f1f49e14fa00f67ac7a1a06e, type: 3}
-      propertyPath: m_Name
-      value: Skorpion VZ Variant
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 28fde303f1f49e14fa00f67ac7a1a06e, type: 3}
---- !u!4 &7276869490141735906 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7822601023205696532, guid: 28fde303f1f49e14fa00f67ac7a1a06e, type: 3}
-  m_PrefabInstance: {fileID: 609063541605847030}
-  m_PrefabAsset: {fileID: 0}

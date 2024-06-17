@@ -39,6 +39,7 @@ public class SoundController : MonoBehaviour
     //Play sound on loop
     public void PlaySoundLoop(AudioClip clip)
     {
+        Debug.Log("ReproducirSonido");
         audioSourceLoop.loop = true;
         audioSourceLoop.clip = clip;
         audioSourceLoop.Play();

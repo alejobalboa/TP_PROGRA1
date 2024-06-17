@@ -11,7 +11,7 @@ public class test : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        soundController = GetComponent<SoundController>();
     }
 
     // Update is called once per frame
