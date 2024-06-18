@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float lifeTime;
     [SerializeField] private float damage;
+    [SerializeField] private Vector3 fuerza;
     private Enemy zombie;
 
     private Vector3 direction;
@@ -75,6 +76,12 @@ public class Bullet : MonoBehaviour
         {
             Enemy enemy = other.gameObject.GetComponent<Enemy>(); 
             enemy.ZombieTakeDamage(damage);
+        }
+       
+        if (other.CompareTag("ElementForce"))
+        {
+            Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();  
+            rb.AddForce((other.transform.position - transform.position).normalized * 10, ForceMode.Impulse);
         }
         Destroy(gameObject);
     }
