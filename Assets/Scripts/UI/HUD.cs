@@ -39,6 +39,11 @@ public class HUD : MonoBehaviour
 
     void Update()
     {
+        if (remyInstance == null)
+        {
+            remyInstance = GameManager.Instance.GetPlayerInstance();
+        }
+
         HealthBar();
         RescueBar();
         RescueBarLost();
